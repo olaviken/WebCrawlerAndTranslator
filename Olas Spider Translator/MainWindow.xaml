@@ -1,0 +1,84 @@
+﻿<Window x:Class="Olas_Spider_Translator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Olas_Spider_Translator"
+        mc:Ignorable="d"
+        Title="Olas spider translator" Height="450" Width="900">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Crawler Kontroll">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" Height="20">Filsti:</TextBlock>
+                    <TextBox x:Name="Filepath" Grid.Row="1" Grid.Column="2" Width="450" Grid.ColumnSpan="2" Height="20"></TextBox>
+                    <Button x:Name="BtnGetUrlCsv" Grid.Row="1" Grid.Column="4" Margin="5" Content="Hent URL fra CSV fil" Height="20" Click="btnGetUrlCsv_Click"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" Height="20" Grid.ColumnSpan="2">Liste over URL</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="3" Margin="5" Height="20">Tekst original språk</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="4" Margin="5" Height="20" Grid.ColumnSpan="1">Oversettelse til:</TextBlock>
+                    <TextBlock x:Name="Language" Grid.Row="2" Grid.Column="5" Margin="5" Height="20" Grid.ColumnSpan="1"></TextBlock>
+                    <TextBlock x:Name="LengthOriginalText" Grid.Row="3" Grid.Column="3" Margin="5"/>
+                    <TextBlock x:Name="LengthTranslatedText" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="5"/>
+                    <ListBox x:Name="URLList" Grid.Row="4" Grid.Column="1" Grid.RowSpan="4" Width="240" Margin="5" Grid.ColumnSpan="2" ItemsSource="{Binding dataOnWebsite}" SelectionChanged="URLList_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding URL}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBox x:Name="OriginalLang" Grid.Row="4" Grid.Column="3" Grid.RowSpan="4" Width="270" Margin="5" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"></TextBox>
+                    <TextBox x:Name="Translation" Grid.Row="4" Grid.Column="4" Grid.RowSpan="4" Width="310" Margin="5" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2"></TextBox>
+                    <Button x:Name="GetText" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Margin="5" Content="Hent tekst til oversettelse" Click="btnGetText_Click"/>
+                    <Button x:Name="BtnTranslate" Grid.Column="3" Grid.Row="8" Margin="5" Content="Oversett" Click="btnTranslate_Click"/>
+                    <Button x:Name="BtnCopy" Grid.Column="4" Grid.Row="8" Margin="5" Content="Kopier Oversettelse" Click="btnCopy_Click"/>
+                    <Button x:Name="BtnSave" Grid.Column="5" Grid.Row="8" Margin="5" Content="Lagre Data" Click="btnSave_Click"/>
+                    <TextBlock x:Name="ProgressText" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="2"></TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Hjelp">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="BtnHelpCsv" Content="Hvordan CSV filen skal se ut" Grid.Column="2" Grid.Row="1" Margin="5" Click="BtnHelpCsv_Click"/>
+                    <Button x:Name="BtnHelpUse" Content="Hvordan bruke programmet" Grid.Column="2" Grid.Row="2" Margin="5" Click="BtnHelpUse_Click"/>
+                    <Button x:Name="BtnHelpJson" Content="Hvordan ser lagret resultat ut" Grid.Column="2" Grid.Row="3" Margin="5" Click="BtnHelpJson_Click"/>
+                    <TextBlock x:Name="HelpText" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" TextWrapping="Wrap"></TextBlock>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

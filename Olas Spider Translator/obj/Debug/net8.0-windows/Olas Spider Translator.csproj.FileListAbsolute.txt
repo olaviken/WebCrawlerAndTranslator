@@ -1,0 +1,25 @@
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\Olas Spider Translator.exe
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\Olas Spider Translator.deps.json
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\Olas Spider Translator.runtimeconfig.json
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\Olas Spider Translator.dll
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\Olas Spider Translator.pdb
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\CsvHelper.dll
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
+D:\Projects\Olas Spider Translator\Olas Spider Translator\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.csproj.AssemblyReference.cache
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\App.g.cs
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator_MarkupCompile.cache
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator_MarkupCompile.lref
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.g.resources
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.AssemblyInfoInputs.cache
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.AssemblyInfo.cs
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.csproj.CoreCompileInputs.cache
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spi.EC5C7DEA.Up2Date
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.dll
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\refint\Olas Spider Translator.dll
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.pdb
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\Olas Spider Translator.genruntimeconfig.cache
+D:\Projects\Olas Spider Translator\Olas Spider Translator\obj\Debug\net8.0-windows\ref\Olas Spider Translator.dll
