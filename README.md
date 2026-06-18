@@ -1,40 +1,27 @@
 # Web crawler and translator
-The main goal of this project is to collect all text from given websites, send them to google translate for translation and display translated text for use in other applications. 
 
-## How it works
-The program works by the user opens a FileDialog window and chooses the correct CSV file. The system can only read CSV files for this purpose. During reading of the CSV file the program will show which URL it is collecting at the bottom of the software and all URL will show in the listbox at the left side of the user interface. To collect the text from the website the user presses the button named "Retrieve text for translation". This function will go through the list of URLS, crawl the sites, and collect the text and store it a list. After the text is collected the user can ask the software to translate all the texts collected. The software will then go through the list and send the original text to google translate for translation through a HTTp request. With the translated text the software has to parse trough returned data to find the complete text before storing it in the list and showing it to user.
+Er et spesialisert verktøy utviklet for å automatisere prosessen med å samle inn tekst fra nettsider, oversette den og klargjøre resultatet for videre bruk. 
+Systemet er bygget som en C# WPF-applikasjon som kombinerer web-skraping med automatisk oversettelse via skybaserte tjenester.
 
-## Graphic user interface (GUI)
-The GUI is divided into to tabs. One part is for the main controls and the other is a simple user manual/help tab. The main control tab starts where the filepath will go and a button to open the Filedialog window. Below this area there are one large listbox window to the left of two large textboxes. These three are the main area of the control tab. The listbox will show all the URL that is being translated. It is interactive and if a URL is marked it will show the original text, and translation when these operation is done. Also above each textbox it will show word count for both original and translated text along with which language it is translated to. Below the listbox and textboxes the controls are located in form of four buttons. The left most button scrapes all the websites for original text. 2nd from the left sends all original text to translation, 3rd button copies the text in the translated textbox to windows clipboard. Lastly the fourth button stores all data into a JSON file located at a chosen place by the user.
+**Systemets funksjonalitet**
+Programmet fungerer ved at en bruker laster inn en CSV-fil som inneholder en liste over nettadresser (URL-er).
+Gjennom et grafisk brukergrensesnitt kan man deretter utføre følgende handlinger:
 
-## Technical aspects.
+* **Innsamling:** Systemet går gjennom listen, "crawler" (skraper) nettsidene og henter ut all relevant tekst.
+* **Oversettelse:** Den originale teksten sendes til Google Translate via HTTP-forespørsler.
+* **Håndtering av store datamengder:** For å omgå tekniske begrensninger i oversettelsestjenesten, inneholder programmet logikk som automatisk deler opp store tekster i mindre biter før de sendes, for så å sette dem sammen igjen etter at oversettelsen er fullført.
+* **Eksport:** Brukeren kan se ordtelling, velge målspråk og lagre de ferdige resultatene som en JSON-fil.
 
-### Dependencies
-To handle different parts of the project, different external libraries and framework was used:
-1. CsvHelper was used to load and read through the CSV file. (https://joshclose.github.io/CsvHelper/)
-2. HtmlAgilityPack was used for scraping the websites and retrive original text. (https://html-agility-pack.net/)
-3. Newtonsoft.Json was used to parse translated array and store the data as JSON file. (https://www.newtonsoft.com/json)
+**Teknisk oppbygging**
+Prosjektet er organisert i fire sentrale klasser som håndterer hver sin del av arbeidsflyten:
+* **urlInfo:** Et dataobjekt som holder på informasjonen om URL, originaltekst og oversatt tekst.
+* **fileHandling:** Håndterer lesing av CSV-filer og lagring av JSON-data.
+* **webCrawler:** Inneholder logikken for å identifisere og hente ut tekst fra HTML-containere på nettsider.
+* **googleTranslator:** Kommuniserer med Google Translate-API-et og sørger for parsing av de returnerte dataene.
 
-### Project classes
-Besides the main class in a C# WPF project this project has four other classes. Each focusing on one area of the project. These classes are as following:
+For å løse disse oppgavene benyttes eksterne biblioteker som HtmlAgilityPack for skraping, CsvHelper for filbehandling og Newtonsoft.Json for datastrukturering.
 
-urlInfo:
-This is a simple data object it makes the backbone of the project list where all the data is stored. It is made of four different string variables, URL, original text, translate to, and translated text. 
-
-fileHandling:
-This class handles all the functions with loading and storing data. It finds and loads data from the CSV file. Also, storing the completed data into the JSON file. 
-
-webCrawler:
-This class has the functions for scraping the URLs all the text on the websites, finding the language it is translating to, and finding relevant text to translate. Since this scraper is tailormade to scrape through websites spesifically at the Norwegian University of Science and Technology it has to be modified for other sites. Specifically which html containers that are relevant, where to find the language toggler, and where in return array the relevant text is located.
-
-googleTranslator:
-This class handles all the work with sending text to google translate through the HTTP request. This method might be changed by Google in the future. The method uses autodetect on the original language and uses language code from webCrawler to translate. Since the text on some of the sites might exceed the max character of the request, this class has a function that breaks such large text into managable chunks of text. These chunks are then sendt seperately and are welded together after translation. The result from Google translate is a JSON array so this class also has a function that parse through this array to find the translated text. 
-
-## Other uses for this project or part of the project
-Part of this project could be used in other projects such as:
-
-1. Data aggregation for research
-2. Sentiment analysis
-3. Automated summary generator
-4. Competitive market analysis
-5. Multilingual dataset generation for natural language processing (NLP)
+**Praktisk anvendelse**
+Teknologien har blitt brukt profesjonelt ved NTNU for å automatisere oversettelsen av instituttets nettsider fra norsk til engelsk. 
+Ved å tilpasse skrapeløsningen til universitetets spesifikke HTML-struktur, kunne man effektivt generere engelsk innhold.
+Systemet er ellers velegnet for oppgaver som datainnsamling til forskning, sentimentanalyse, eller generering av flerspråklige datasett for maskinlæring.
