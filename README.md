@@ -3,7 +3,7 @@
 Er et spesialisert verktøy utviklet for å automatisere prosessen med å samle inn tekst fra nettsider, oversette den og klargjøre resultatet for videre bruk. 
 Systemet er bygget som en C# WPF-applikasjon som kombinerer web-skraping med automatisk oversettelse via skybaserte tjenester.
 
-**Systemets funksjonalitet**
+### **Systemets funksjonalitet**
 
 Programmet fungerer ved at en bruker laster inn en CSV-fil som inneholder en liste over nettadresser (URL-er).
 Gjennom et grafisk brukergrensesnitt kan man deretter utføre følgende handlinger:
@@ -13,7 +13,7 @@ Gjennom et grafisk brukergrensesnitt kan man deretter utføre følgende handling
 * **Håndtering av store datamengder:** For å omgå tekniske begrensninger i oversettelsestjenesten, inneholder programmet logikk som automatisk deler opp store tekster i mindre biter før de sendes, for så å sette dem sammen igjen etter at oversettelsen er fullført.
 * **Eksport:** Brukeren kan se ordtelling, velge målspråk og lagre de ferdige resultatene som en JSON-fil.
 
-**Teknisk oppbygging**
+### **Teknisk oppbygging**
 
 Prosjektet er organisert i fire sentrale klasser som håndterer hver sin del av arbeidsflyten:
 * **urlInfo:** Et dataobjekt som holder på informasjonen om URL, originaltekst og oversatt tekst.
@@ -23,7 +23,7 @@ Prosjektet er organisert i fire sentrale klasser som håndterer hver sin del av 
 
 For å løse disse oppgavene benyttes eksterne biblioteker som HtmlAgilityPack for skraping, CsvHelper for filbehandling og Newtonsoft.Json for datastrukturering.
 
-**Praktisk anvendelse**
+### **Praktisk anvendelse**
 
 Teknologien har blitt brukt profesjonelt ved NTNU for å automatisere oversettelsen av instituttets nettsider fra norsk til engelsk. 
 Ved å tilpasse skrapeløsningen til universitetets spesifikke HTML-struktur, kunne man effektivt generere engelsk innhold.
